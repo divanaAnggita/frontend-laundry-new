@@ -27,21 +27,27 @@ class Navbar extends React.Component{
                                 Home
                             </Link>
                         </li>
+                        {this.props.role === "admin" ?(
                         <li className="nav-item">
                             <Link to="/member" className="nav-link text-white">
                                 Member
                             </Link>
                         </li>
+                        ) : null}
+                        {this.props.role === "admin" ? (
                         <li className="nav-item">
                             <Link to="/user" className="nav-link text-white">
                                 User
                             </Link>
                         </li>
+                        ) :null}
+                        {this.props.role === "admin" ? (
                         <li className="nav-item">
                             <Link to="/paket" className="nav-link text-white">
                                 Paket
                             </Link>
                         </li>
+                        ) :null}
                         <li className="nav-item">
                             <Link to="/transaksi" className="nav-link text-white">
                                 Transaksi

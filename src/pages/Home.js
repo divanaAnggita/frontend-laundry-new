@@ -16,6 +16,7 @@ export default class Home extends React.Component{
         }
         if (localStorage.getItem("token")){
             this.state.token = localStorage.getItem("token")
+            this.state.role = JSON.parse(localStorage.getItem("user")).role
         } else {
             window.location = "/login"
         }
@@ -111,7 +112,7 @@ export default class Home extends React.Component{
         render(){
         return(
             <div>
-                <Navbar />
+                <Navbar role={this.state.role} />
                 <div className="container mt-2">
                     <h3 className="my-2">
                         <strong>Welcome Back, {this.state.adminName}</strong>

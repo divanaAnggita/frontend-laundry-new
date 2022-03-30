@@ -20,6 +20,7 @@ export default class User extends React.Component{
         }
         if (localStorage.getItem("token")){
             this.state.token = localStorage.getItem("token")
+            this.state.role = JSON.parse(localStorage.getItem("user")).role
             // console.log(this.state.token)
         } else {
             window.location = "/login"
@@ -122,7 +123,7 @@ export default class User extends React.Component{
     render(){
         return(
             <div>
-                <Navbar />
+                <Navbar role={this.state.role}/>
                 <div className="container">
                     <h3 className="text-bold text-info mt-2">
                         User List
@@ -181,14 +182,14 @@ export default class User extends React.Component{
 
                                         Role
                                         <div className="form-group">
-                                            <select name="role" id="role" className="form-control"
+                                            <select name="role" id_role="role" className="form-control"
                                             onChange={ev => this.setState({role: ev.target.value})}
                                             id="exampleFormControlSelect1" value={this.state.role}>
                                                 <option>--- Pilih ---</option>     
-                                                <option value="Admin">
+                                                <option value="admin">
                                                     Admin
                                                 </option>
-                                                <option value="Kasir">
+                                                <option value="kasir">
                                                     Kasir
                                                 </option>
                                             </select>
