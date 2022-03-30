@@ -10,8 +10,8 @@ class Navbar extends React.Component{
 
     render(){
         return(
-            <div className="navbar navbar-expand-lg bg-dark navbar-light">
-                <a className="navbar-brand text-white">Moklet Laundry</a>
+            <div className="navbar navbar-expand-lg navbar-light bg-light">
+                <a className="navbar-brand">Moklet Laundry</a>
 
                     {/* show and hide menu */}
                 <button className="navbar-toggler" data-toggle="collapse"
@@ -23,38 +23,38 @@ class Navbar extends React.Component{
                 <div id="menu" className="navbar-collapse collpase">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <Link to="/" className="nav-link text-white">
+                            <Link to="/" className="nav-link ">
                                 Home
                             </Link>
                         </li>
                         {this.props.role === "admin" ?(
                         <li className="nav-item">
-                            <Link to="/member" className="nav-link text-white">
+                            <Link to="/member" className="nav-link ">
                                 Member
                             </Link>
                         </li>
                         ) : null}
                         {this.props.role === "admin" ? (
                         <li className="nav-item">
-                            <Link to="/user" className="nav-link text-white">
+                            <Link to="/user" className="nav-link ">
                                 User
                             </Link>
                         </li>
                         ) :null}
                         {this.props.role === "admin" ? (
                         <li className="nav-item">
-                            <Link to="/paket" className="nav-link text-white">
+                            <Link to="/paket" className="nav-link ">
                                 Paket
                             </Link>
                         </li>
                         ) :null}
                         <li className="nav-item">
-                            <Link to="/transaksi" className="nav-link text-white">
+                            <Link to="/transaksi" className="nav-link ">
                                 Transaksi
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" onClick={() => this.Logout()}>
+                            <Link className="nav-link " onClick={() => this.Logout()}>
                                 Logout
                             </Link>
                         </li>
